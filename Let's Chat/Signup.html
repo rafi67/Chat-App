@@ -1,0 +1,35 @@
+<html lang="en">
+  <head>
+    <title>Let's Chat</title>
+    <link rel="shortcut icon" href="images/starchat.png">
+    <link rel="stylesheet" type="text/css" href="style2.css">   
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+       var oPosition = null;
+       $(function () {
+            $('#btnlogin').click(function(){
+                     var oUserInfo = {
+                    "userId": $('#username').val()
+                };
+              sessionStorage.setItem('userInfo', JSON.stringify(oUserInfo));
+              window.location.replace("http://localhost:4000/let'schat");
+            });
+       });
+   </script>
+  </head>
+  <body>
+    <div class="main">
+            <form name="myform" id="form">
+                <div class="sub-main">
+                    <div class="flex">
+                        <input type="text" id="username" placeholder="User Name">
+                    </div><br>
+                    <div class="flex">
+                        <input type="password" id="password" placeholder="Password">
+                    </div><br>
+                    <input type="button" id="btnlogin" value="Login" class="btn">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
